@@ -18,5 +18,5 @@ $^I = '.out';
 while (<>) {
   chomp;
   s/($search)/$replacement/gi;
-  print;
+  print $_ . "\n";
 }
