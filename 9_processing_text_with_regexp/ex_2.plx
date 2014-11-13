@@ -13,6 +13,7 @@ my $replacement = 'Larry';
 # with a name formed from the name of the original file + contents of $^I
 
 #in this way, you can update many files at once, creating backups 
+open IN , '<', $ARGV[0]/
 $^I = '.out';  
 
 while (<>) {
