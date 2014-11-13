@@ -1,0 +1,15 @@
+pattern: match
+beforematchafter
+pattern: \b?(\w+a)\b
+wilma
+barney
+wilma&fred
+Mrs. Wilma Flintstone
+pattern: \b?(?<word>\w+a)\b
+wilma
+Wilma&Fred
+pattern: \b?(?<word>\w+a)\b.{0,5}
+wilma
+wilma and fred
+I saw Wilma Yesterday
+I, Wilma!
