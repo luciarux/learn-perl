@@ -12,11 +12,11 @@ my $replacement = 'Larry';
 # the temporary files used for search and replace will be saved
 # with a name formed from the name of the original file + contents of $^I
 
-#in this way, you can update many files at once, leaving the originals untouched
+#in this way, you can update many files at once, creating backups 
 $^I = '.out';  
 
 while (<>) {
   chomp;
-  s/($search)/($replacement)/gi;
+  s/($search)/$replacement/gi;
   print;
 }
