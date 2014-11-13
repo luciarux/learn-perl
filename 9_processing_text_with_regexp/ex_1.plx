@@ -7,5 +7,7 @@
 my $what = 'fred|barney';
 
 foreach (qw{ fredbarneybarney fredfred fredfredfred barneybarneybarney}) {
-  
+  if (/($what){3}/) {
+    print ("$_ matches 3 x $what\n");  
+  }
 }
