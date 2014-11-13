@@ -3,6 +3,7 @@
 # a program to test different patterns against lines
 # in the files supplied which specify the patterns in lines starting with 'pattern: '
 # and the strings the match against on the lines after
+# use it in command line ./test_pattern.plx test_pattern.txt
 
 $pattern = ".*";
 while (<>) {
