@@ -20,4 +20,5 @@ while (<>) {
   chomp;
   s{(^#!.*)}{$1\n$line};  
   print;
+  print "\n";
 }
