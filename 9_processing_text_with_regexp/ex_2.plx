@@ -9,14 +9,18 @@
 my $search = 'fred';
 my $replacement = 'Larry';
 
-# the temporary files used for search and replace will be saved
-# with a name formed from the name of the original file + contents of $^I
+my $in_file_name = $ARGV[0];
+my $out_file_name = $in_file_name . '.out';
+open IN , '<', $in_file_name or die "Couldn't open input file: $!";
+open OUT , '<', $out_file_name or die "Couldn't open output file: $!";
 
-#in this way, you can update many files at once, creating backups 
-$^I = '.out';  
+select OUT; # the output will go to the OUT file instead of STDOUT;
 
-while (<>) {
+while (<IN>) {
   chomp;
   s/($search)/$replacement/gi;
   print $_ . "\n";
 }
+close IN;
+close OUT;
+select STDOUT;
