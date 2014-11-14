@@ -22,8 +22,8 @@ my $copy_pattern = "##Copyright";
 foreach (@ARGS) {
   open FILE, '>', $_;
   my $lines = join '', FILE;
-  $lines ~= s/\A$copyPattern\z//;
-  $lines ~= s/(\A$shebang\z)/$1\n$line/;
+  $lines =~ s/\A$copyPattern\z//;
+  $lines =~ s/(\A$shebang\z)/$1\n$line/;
   print FILE $lines;
   close FILE;
 }
