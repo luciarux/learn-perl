@@ -10,7 +10,7 @@ my $secret_no = int(1 + rand(100));
 for (;;) {
   print("Guess the number, or press quit/exit/enter:\n");
   chomp(my $line = <STDIN>);
-  last if (!$line || $line =~ /^exit|quit$/);
+  last if ( $line =~ /^exit|quit|\s*$/);
   
   if ($line == $secret_no) {
     print("You guessed!\n");
