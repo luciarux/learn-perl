@@ -8,4 +8,4 @@ $root = 1;
   print("The square root of $n is $root.\n");
 }
 
-print "Default root is $root;"
+print "Default root is $root\n";
