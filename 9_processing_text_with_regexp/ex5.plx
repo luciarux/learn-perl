@@ -16,14 +16,18 @@ my $name = "Luciarux";
 my @now = localtime();  #an array with sec, min, hour, day, month, year, etc.
 my $year = $now[5] + 1900; 
 my $line = "##Copyright (C) $year by $name";
-my $shebang = "#!.*\n";
+my $shebang = "#!.*";
 my $copy_pattern = "##Copyright";
 
 foreach (@ARGV) {
-  open FILE, '>', $_;
+  open FILE, '<', $_;
   my $lines = join '', <FILE>;
-  $lines =~ s/\A$copyPattern\z//;
-  $lines =~ s/(\A$shebang\z)/$1\n$line/;
-  print $lines . "\n";
   close FILE;
+  if (! $lines =~ /$line/) {
+     open FILE, ">", $_;
+     $lines =~ s/(\A$shebang)\n/$1\n$line\n/;
+     print $lines;
+     print FILE $lines;
+     close FILE;
+  }
 }
