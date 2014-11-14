@@ -7,7 +7,7 @@
 
 
 my $secret_no = int(1 + rand(100));
-my $debug = %ENV{DEBUG} // 1;
+my $debug = $ENV{'DEBUG'} // 1;
 print "The number is $secret_no\n" if $debug;
 
 for (;;) {
