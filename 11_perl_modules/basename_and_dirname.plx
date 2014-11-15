@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-use File::Basename;
+use File::Basename();
 
 print("This program uses the module File::Basename.\n To test it, please enter a path to a file, then press enter:\n");
 while (<STDIN>) {
